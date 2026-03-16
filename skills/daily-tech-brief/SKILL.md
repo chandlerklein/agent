@@ -17,7 +17,7 @@ Fetches the top 10 technology news stories of the day from across the web, curat
 
 ## Sources to Fetch From
 
-Fetch in two passes. **Aggregators first**, then primary outlets. This ensures you surface what's actually trending today rather than defaulting to the same homepages every run.
+Fetch in three passes. **Aggregators first**, then primary outlets, then secondary sources as needed for breadth. This ensures you surface what's actually trending today rather than defaulting to the same homepages every run.
 
 ### Pass 1 — Aggregators (Always Fetch First)
 
