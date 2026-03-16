@@ -1,16 +1,16 @@
 # agent
 
-A collection of resources for the [GitHub Copilot CLI](https://docs.github.com/copilot/concepts/agents/about-copilot-cli) agent — including skills, prompt templates, and reference materials.
+A collection of resources for AI agents — including skills, prompt templates, and reference materials.
 
 ## Contents
 
 | Resource Type | Location | Description |
 |---------------|----------|-------------|
-| Skills | [`skills/`](skills/) | Custom behaviors that extend what the Copilot CLI agent can do |
+| Skills | [`skills/`](skills/) | Custom behaviors that extend what an agent can do |
 
 ## Skills
 
-Skills are markdown prompt files that extend the Copilot CLI agent with specialized behaviors. Each skill lives in its own directory under `skills/` and includes a `SKILL.md` that tells the agent when and how to use it.
+Skills are markdown prompt files that give an agent specialized behaviors. Each skill lives in its own directory under `skills/` and includes a `SKILL.md` that tells the agent when and how to use it.
 
 | Skill | Description |
 |-------|-------------|
@@ -18,9 +18,7 @@ Skills are markdown prompt files that extend the Copilot CLI agent with speciali
 
 ### Using Skills
 
-To load skills into the Copilot CLI, run `/skills` from within a session and point it at this repository, or place the skills directory where the CLI can discover it.
-
-Once loaded, trigger a skill naturally — for example:
+Load the `skills/` directory into your agent session. Once loaded, trigger a skill naturally — for example:
 
 > "Give me a daily tech brief"
 > "What happened in tech today?"
@@ -33,9 +31,3 @@ Once loaded, trigger a skill naturally — for example:
 3. Add any supporting reference files in a `references/` subdirectory.
 
 See [skills/daily-tech-brief](skills/daily-tech-brief/) for a complete example.
-
-## Resources
-
-- [GitHub Copilot CLI documentation](https://docs.github.com/copilot/concepts/agents/about-copilot-cli)
-- [About custom skills](https://docs.github.com/copilot/concepts/agents/about-copilot-cli#skills)
-- [About premium requests](https://docs.github.com/copilot/managing-copilot/monitoring-usage-and-entitlements/about-premium-requests)
