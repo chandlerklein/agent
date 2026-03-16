@@ -7,9 +7,10 @@ Use this structure for the daily tech brief HTML output. Keep styling minimal an
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Daily Tech Brief — {DATE}</title>
   <style>
-    body { font-family: Georgia, serif; max-width: 750px; margin: 40px auto; padding: 0 20px; line-height: 1.7; color: #222; }
+    body { font-family: Georgia, serif; max-width: 750px; margin: 40px auto; padding: 0 20px; line-height: 1.7; color: #222; background: #fff; }
     h1 { font-size: 1.5rem; border-bottom: 2px solid #222; padding-bottom: 8px; }
     .meta { color: #666; font-size: 0.85rem; margin-bottom: 30px; }
     h2 { font-size: 1.1rem; margin-top: 2em; margin-bottom: 4px; }
@@ -17,12 +18,20 @@ Use this structure for the daily tech brief HTML output. Keep styling minimal an
     p { margin: 0.5em 0 1em; }
     a { color: #1a0dab; }
     hr { border: none; border-top: 1px solid #ddd; margin: 2em 0; }
+    footer { font-size: 0.8rem; color: #888; margin-top: 2em; }
+    @media (prefers-color-scheme: dark) {
+      body { background: #1a1a1a; color: #e0e0e0; }
+      h1 { border-bottom-color: #e0e0e0; }
+      .meta, .source, footer { color: #999; }
+      a { color: #8ab4f8; }
+      hr { border-top-color: #444; }
+    }
   </style>
 </head>
 <body>
 
 <h1>Daily Tech Brief — {DATE}</h1>
-<p class="meta">Curated for software developers &mdash; {SOURCE_LIST}</p>
+<p class="meta">Curated for software developers</p>
 
 <hr>
 
@@ -34,7 +43,7 @@ Use this structure for the daily tech brief HTML output. Keep styling minimal an
 <hr>
 <!-- End story block -->
 
-<p class="meta">Sources consulted: {SOURCE_LINKS}</p>
+<footer>Sources consulted: {SOURCE_LINKS}</footer>
 
 </body>
 </html>
@@ -45,13 +54,12 @@ Use this structure for the daily tech brief HTML output. Keep styling minimal an
 | Variable | Description |
 |----------|-------------|
 | `{DATE}` | Full date, e.g. "March 16, 2026" |
-| `{SOURCE_LIST}` | Comma-separated plain-text source names |
 | `{N}` | Story number (1–10) |
 | `{HEADLINE}` | Article headline, kept concise |
 | `{SOURCE_NAME}` | Publication name, e.g. "Ars Technica" |
 | `{ARTICLE_URL}` | Direct link to the article |
 | `{PARAGRAPH_1}` | What happened and why it matters |
-| `{PARAGRAPH_2}` | Context, implications, or developer-relevant detail |
+| `{PARAGRAPH_2}` | Context, implications, or developer-relevant detail (omit if one paragraph is sufficient) |
 | `{SOURCE_LINKS}` | Anchor tags for each source consulted |
 
 ## Output File Naming

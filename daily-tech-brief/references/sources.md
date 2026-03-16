@@ -13,8 +13,9 @@ Start with aggregators that surface what's actually trending *today*, rather tha
 | Aggregator | URL | Notes |
 |------------|-----|-------|
 | Hacker News front page | https://news.ycombinator.com/ | Community-ranked; reflects what developers care about right now |
-| Google News – Technology | https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlBQVAB | Broad real-time index across hundreds of outlets |
 | Techmeme | https://www.techmeme.com/ | Algorithm + human editors; shows the most-linked tech stories of the day |
+| Lobste.rs | https://lobste.rs/ | Developer-focused aggregator with topic tags (open source, security, languages, devops); strong complement to HN |
+| Google News – Technology | https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlBQVAB | Broad real-time index. **Note:** this is an encoded URL that may break — if it fails, try `https://news.google.com/search?q=technology+news` as a fallback |
 
 Pull these **first**. They will point you to specific outlets and articles that are actually hot today, not just outlets you've hardcoded.
 
@@ -38,8 +39,10 @@ These sources publish tech news every day and are worth checking directly if the
 |--------|-----|--------|-------|
 | Hacker News | https://news.ycombinator.com/ | HTML | Sort by points. Stories with 100+ points are strong candidates. |
 | Ars Technica | https://feeds.arstechnica.com/arstechnica/index | RSS/XML | Use RSS for clean structured data. Filter to `AI`, `Tech`, `Security`, `Science` categories. |
+| The New Stack | https://thenewstack.io/ | HTML | Excellent cloud-native, Kubernetes, DevOps, and platform engineering coverage. RSS: `https://thenewstack.io/feed/` |
+| GitHub Blog | https://github.blog/ | HTML | Direct source for GitHub features, Actions, Copilot, and open-source ecosystem news. RSS: `https://github.blog/feed/` |
 | The Verge | https://www.theverge.com/tech | HTML | Tech section landing page. |
-| Engadget | https://www.engadget.com/ | HTML | Good for consumer tech, AI product news, streaming. |
+| TechCrunch | https://techcrunch.com/ | HTML | Startups, funding rounds, industry moves. RSS: `https://techcrunch.com/feed/` |
 
 ## Secondary Sources (Fetch When Possible)
 
@@ -49,10 +52,11 @@ Fetch these to broaden coverage, especially if primary sources are thin:
 |--------|-----|--------|-------|
 | Wired | https://www.wired.com/ | HTML | Best for security, policy, and in-depth features. |
 | MIT Technology Review | https://www.technologyreview.com/ | HTML | Research, AI, energy, and emerging tech. |
-| TechCrunch | https://techcrunch.com/ | HTML | Startups, funding rounds, industry moves. |
-| The Register | https://www.theregister.com/ | HTML | Enterprise, security, UK/EU policy. |
-| 9to5Mac | https://9to5mac.com/ | HTML | Apple platform and developer news. |
+| The Register | https://www.theregister.com/ | HTML | Enterprise, security, UK/EU policy. RSS: `https://www.theregister.com/headlines.atom` |
 | Krebs on Security | https://krebsonsecurity.com/ | HTML | Cybersecurity and cybercrime. |
+| Engadget | https://www.engadget.com/ | HTML | Consumer tech and AI products. RSS: `https://www.engadget.com/rss.xml`. Note: editorial output has reduced in recent years; use if other sources are thin. |
+| 9to5Mac | https://9to5mac.com/ | HTML | Apple platform and developer news. Best for Apple-specific developer stories (Swift, Xcode, etc.). |
+| MacRumors | https://www.macrumors.com/ | HTML | Apple platform news. Lower priority unless covering an Apple developer story. |
 
 ---
 
