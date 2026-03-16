@@ -35,7 +35,7 @@ Fetch in passes — **aggregators first**, then primary outlets. This surfaces w
 | The New Stack | https://thenewstack.io/feed/ | DevOps, Kubernetes, cloud-native, microservices |
 | GitHub Blog | https://github.blog/feed/ | Platform updates, open source releases, security advisories |
 
-### Pass 3 — Secondary Sources (Fetch When Needed for Breadth)
+### Pass 3 — Secondary Sources (Fetch When Primary Sources Are Thin)
 
 | Source | URL | Best For |
 |--------|-----|----------|

@@ -28,7 +28,7 @@ For RSS feeds, use the `<pubDate>` field to filter. For Atom feeds (e.g., The Re
 
 ## Primary Sources (Deep Developer Coverage)
 
-Fetch these **after aggregators** to catch important developer stories the aggregators may have missed. Use RSS where available — these sites are often JavaScript-heavy and RSS gives cleaner, more complete content:
+Fetch these **after aggregators** to catch important developer stories the aggregators may have missed. All primary sources have RSS/Atom feeds — use them for clean, structured data:
 
 | Source | URL | Format | Notes |
 |--------|-----|--------|-------|
