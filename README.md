@@ -1,6 +1,6 @@
 # agent
 
-A collection of resources for AI agents — including skills, prompt templates, and reference materials.
+A collection of skills and resources for AI agents.
 
 ## Contents
 
