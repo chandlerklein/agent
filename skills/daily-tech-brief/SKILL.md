@@ -1,6 +1,6 @@
 ---
 name: daily-tech-brief
-description: 'Fetches and summarizes the top 10 tech news stories of the day, curated for software developers. Use when asked for a "daily tech brief", "tech news", "what happened in tech today", "top tech stories", "morning tech roundup", or any request for current technology headlines, developer news, or software industry updates. Covers AI/ML, security, open source, cloud, programming languages, developer tools, and industry news from sources like Hacker News, The Verge, Ars Technica, Wired, Engadget, MIT Technology Review, TechCrunch, and more. Outputs an HTML page opened in the browser.'
+description: 'Fetches and summarizes the top 10 tech news stories of the day, curated for software developers. Use when asked for a "daily tech brief", "tech news", "what happened in tech today", "top tech stories", "morning tech roundup", or any request for current technology headlines, developer news, or software industry updates. Covers AI/ML, security, open source, cloud, DevOps, programming languages, and developer tools. Sources aggregators first (Hacker News, Techmeme, lobste.rs, Google News) then primary outlets (Ars Technica, The Register, The New Stack, GitHub Blog) for deep developer coverage. Outputs an HTML page opened in the browser.'
 ---
 
 # Daily Tech Brief
@@ -12,33 +12,66 @@ Fetches the top 10 technology news stories of the day from across the web, curat
 - User says "daily tech brief", "tech brief", or "morning roundup"
 - User asks "what happened in tech today?" or "what's the top tech news?"
 - User wants a developer-focused news digest
-- User asks for top stories from Hacker News, The Verge, Ars Technica, Wired, etc.
+- User asks for top stories from Hacker News, Techmeme, Ars Technica, The Register, etc.
 - User wants tech news as an HTML page or in the browser
 
 ## Sources to Fetch From
 
-Pull from as many of these as possible in parallel to get broad coverage:
+Fetch in two passes. **Aggregators first**, then primary outlets. This ensures you surface what's actually trending today rather than defaulting to the same homepages every run.
+
+### Pass 1 — Aggregators (Always Fetch First)
 
 | Source | URL | Best For |
 |--------|-----|----------|
-| Hacker News | https://news.ycombinator.com/ | Developer community picks, open source, security |
-| The Verge | https://www.theverge.com/tech | Consumer tech, industry news, product launches |
-| Ars Technica | https://feeds.arstechnica.com/arstechnica/index (RSS) | Deep technical coverage, science, policy |
-| Wired | https://www.wired.com/ | Security, culture, policy, in-depth features |
-| Engadget | https://www.engadget.com/ | Consumer tech, hardware, streaming, AI products |
-| MIT Technology Review | https://www.technologyreview.com/ | Research, emerging tech, energy, AI |
+| Hacker News | https://news.ycombinator.com/ | Community-ranked developer picks; open source, tools, security |
+| Techmeme | https://www.techmeme.com/ | Algorithm + human editors; most-linked tech stories of the day |
+| lobste.rs | https://lobste.rs/ | Developer-curated; programming languages, tools, open source |
+| Google News – Technology | https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlBQVAB | Broad real-time index across hundreds of outlets |
+
+### Pass 2 — Primary Outlets (Deep Developer Coverage)
+
+| Source | URL | Best For |
+|--------|-----|----------|
+| Ars Technica | https://feeds.arstechnica.com/arstechnica/index (RSS) | Deep technical coverage, science, security, policy |
+| The Register | https://www.theregister.com/ | Enterprise tech, security, infrastructure |
+| The New Stack | https://thenewstack.io/ | DevOps, Kubernetes, cloud-native, microservices |
+| GitHub Blog | https://github.blog/ | Platform updates, open source releases, security advisories |
+
+### Pass 3 — Secondary Sources (Fetch When Needed for Breadth)
+
+| Source | URL | Best For |
+|--------|-----|----------|
+| Krebs on Security | https://krebsonsecurity.com/ | Cybersecurity and cybercrime |
+| InfoQ | https://www.infoq.com/ | Software architecture, AI tooling, enterprise dev |
+| Wired | https://www.wired.com/ | Security policy, in-depth features |
 | TechCrunch | https://techcrunch.com/ | Startups, funding, industry moves |
-| 9to5Mac / MacRumors | https://9to5mac.com / https://www.macrumors.com | Apple platform news |
-| The Register | https://www.theregister.com/ | Enterprise tech, security, British wit |
-| Krebs on Security | https://krebsonsecurity.com/ | Security and cybercrime |
+| MIT Technology Review | https://www.technologyreview.com/ | AI/ML research, emerging tech |
 
 ## Step-by-Step Workflow
 
-### Step 1: Fetch Headlines in Parallel
+### Step 1: Fetch Aggregators First
 
-Use the `web_fetch` tool to load **all sources simultaneously** in a single response. Fetch at least 6–8 sources at once. Use RSS feeds where available (e.g., Ars Technica) since they return clean structured content.
+Use the `web_fetch` tool to load **all four aggregators simultaneously** in a single response. These surface what's actually trending *today* without you having to guess which outlets published strong stories:
 
-### Step 2: Fetch Article Detail for Top Candidates
+| Aggregator | URL |
+|------------|-----|
+| Hacker News | https://news.ycombinator.com/ |
+| Techmeme | https://www.techmeme.com/ |
+| lobste.rs | https://lobste.rs/ |
+| Google News – Technology | https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlBQVAB |
+
+From these results, collect the headlines and links that are generating the most attention. This becomes your initial candidate pool.
+
+### Step 2: Broaden with Primary Outlets
+
+Fetch **primary outlets in parallel** to catch important developer stories that aggregators may have missed. Use RSS where available (e.g., Ars Technica) for clean structured data:
+
+- Ars Technica RSS: `https://feeds.arstechnica.com/arstechnica/index`
+- The Register: `https://www.theregister.com/`
+- The New Stack: `https://thenewstack.io/`
+- GitHub Blog: `https://github.blog/`
+
+### Step 3: Fetch Article Detail for Top Candidates
 
 From the headlines gathered, identify ~15 strong candidates. For the most promising stories, fetch the article page to get enough detail to write a 2-paragraph summary. Prioritize:
 
@@ -53,7 +86,7 @@ Avoid:
 - Celebrity or non-tech news
 - Opinion pieces without a newsworthy hook
 
-### Step 3: Select the Top 10
+### Step 4: Select the Top 10
 
 Choose 10 stories that collectively span multiple categories. Aim for variety:
 - At least 2 AI/ML stories
@@ -61,13 +94,13 @@ Choose 10 stories that collectively span multiple categories. Aim for variety:
 - At least 1 developer tools / open source story
 - Remaining from industry, hardware, policy, or research
 
-### Step 4: Write Summaries
+### Step 5: Write Summaries
 
 For each story write **2 short paragraphs** (~3–5 sentences each):
 - **Paragraph 1**: What happened and why it matters
 - **Paragraph 2**: Context, implications, or developer-relevant detail
 
-### Step 5: Generate and Open HTML
+### Step 6: Generate and Open HTML
 
 Create the HTML file at `/tmp/daily-tech-brief-YYYY-MM-DD.html` using the template in `references/html-template.md`. Then open it with:
 
