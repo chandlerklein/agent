@@ -6,11 +6,11 @@ Reference for which sources to fetch and how to prioritize their content.
 
 Start with aggregators that surface what's actually trending *today*. These are the most important sources — they tell you what the developer community is talking about right now without guessing which outlets published something interesting.
 
-| Aggregator | URL | Notes |
-|------------|-----|-------|
-| Hacker News | https://news.ycombinator.com/ | Community-ranked; best signal for what developers care about right now |
-| Techmeme | https://www.techmeme.com/ | Algorithm + human editors; shows the most-linked tech stories of the day. **Skip the "Sponsor Posts" section.** |
-| lobste.rs | https://lobste.rs/ | Developer-curated community; heavier focus on programming, tools, and open source than HN |
+| Aggregator | URL | Format | Notes |
+|------------|-----|--------|-------|
+| Hacker News | https://news.ycombinator.com/ | HTML | Community-ranked; best signal for what developers care about right now. **Keep as HTML** — the RSS feed omits vote counts needed for the "100+ points" trending filter. |
+| Techmeme | https://www.techmeme.com/feed.xml | RSS/XML | Algorithm + human editors; shows the most-linked tech stories of the day. **Skip the "Sponsor Posts" section.** |
+| lobste.rs | https://lobste.rs/rss | RSS/XML | Developer-curated community; heavier focus on programming, tools, and open source than HN. RSS includes categories for easy filtering. |
 
 Pull these **before** hitting individual outlets. They will point you to specific articles that are actually hot today.
 
@@ -33,19 +33,19 @@ Fetch these **after aggregators** to catch important developer stories the aggre
 | Source | URL | Format | Notes |
 |--------|-----|--------|-------|
 | Ars Technica | https://feeds.arstechnica.com/arstechnica/technology-lab | RSS/XML | Technology Lab feed — AI, security, software, science. Avoids Cars/Gaming categories from the general feed. |
-| The Register | https://www.theregister.com/ | HTML | Enterprise tech, security, infrastructure, UK/EU policy. |
+| The Register | https://www.theregister.com/headlines.atom | Atom/XML | Enterprise tech, security, infrastructure, UK/EU policy. |
 | The New Stack | https://thenewstack.io/feed/ | RSS/XML | DevOps, Kubernetes, cloud-native, microservices. Use RSS — homepage is JS-heavy. |
-| GitHub Blog | https://github.blog/ | HTML | Platform updates, open source releases, security advisories. Low-volume but highly targeted. |
+| GitHub Blog | https://github.blog/feed/ | RSS/XML | Platform updates, open source releases, security advisories. Low-volume but highly targeted. |
 
 ## Secondary Sources (Fetch When Primary Sources Are Thin)
 
 | Source | URL | Format | Notes |
 |--------|-----|--------|-------|
-| Krebs on Security | https://krebsonsecurity.com/ | HTML | Cybersecurity and cybercrime — high signal for supply chain and threat news. |
-| InfoQ | https://www.infoq.com/ | HTML | Software architecture, AI/ML tooling, enterprise development practices. |
-| Wired | https://www.wired.com/ | HTML | Security policy and in-depth features with a tech/society angle. |
-| TechCrunch | https://techcrunch.com/ | HTML | Startups, funding rounds, and industry moves. |
-| MIT Technology Review | https://www.technologyreview.com/ | HTML | AI/ML research and emerging tech. Often paywalled — use headlines only if article body is blocked. |
+| Krebs on Security | https://krebsonsecurity.com/feed/ | RSS/XML | Cybersecurity and cybercrime — high signal for supply chain and threat news. Full article content in feed. |
+| InfoQ | https://feed.infoq.com/ | RSS/XML | Software architecture, AI/ML tooling, enterprise development practices. |
+| Stack Overflow Blog | https://stackoverflow.blog/feed/ | RSS/XML | Developer community insights, AI/ML tools, engineering practices. Developer-focused throughout — no consumer noise. |
+| TechCrunch | https://techcrunch.com/feed/ | RSS/XML | Startups, funding rounds, and industry moves. |
+| MIT Technology Review | https://www.technologyreview.com/feed/ | RSS/XML | AI/ML research and emerging tech. Often paywalled — use headlines only if article body is blocked. |
 
 ---
 
