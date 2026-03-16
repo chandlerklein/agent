@@ -14,7 +14,7 @@ Skills are markdown prompt files that give an agent specialized behaviors. Each 
 
 | Skill | Description |
 |-------|-------------|
-| [daily-tech-brief](skills/daily-tech-brief/) | Fetches and summarizes the top 10 tech news stories of the day, curated for software developers. Outputs a clean HTML page opened in the browser. |
+| [daily-tech-brief](skills/daily-tech-brief/) | Fetches and summarizes the top 10 tech news stories of the day, curated for software developers. Outputs formatted text directly in the conversation. |
 
 ### Using Skills
 

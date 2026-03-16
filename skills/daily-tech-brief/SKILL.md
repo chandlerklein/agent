@@ -22,28 +22,28 @@ Fetch in passes — **aggregators first**, then primary outlets. This surfaces w
 
 | Source | URL | Best For |
 |--------|-----|----------|
-| Hacker News | https://news.ycombinator.com/ | Community-ranked developer picks; open source, tools, security |
-| Techmeme | https://www.techmeme.com/ | Algorithm + human editors; most-linked tech stories of the day. **Skip the "Sponsor Posts" section.** |
-| lobste.rs | https://lobste.rs/ | Developer-curated; programming languages, tools, open source |
+| Hacker News | https://news.ycombinator.com/ | Community-ranked developer picks; open source, tools, security. **Fetch as HTML** — RSS omits vote counts needed for trending filter. |
+| Techmeme | https://www.techmeme.com/feed.xml (RSS) | Algorithm + human editors; most-linked tech stories of the day. **Skip the "Sponsor Posts" section.** |
+| lobste.rs | https://lobste.rs/rss (RSS) | Developer-curated; programming languages, tools, open source |
 
 ### Pass 2 — Primary Outlets (Deep Developer Coverage)
 
 | Source | URL | Best For |
 |--------|-----|----------|
 | Ars Technica | https://feeds.arstechnica.com/arstechnica/technology-lab (RSS) | Deep technical coverage — AI, security, software, science |
-| The Register | https://www.theregister.com/ | Enterprise tech, security, infrastructure, UK/EU policy |
+| The Register | https://www.theregister.com/headlines.atom (Atom) | Enterprise tech, security, infrastructure, UK/EU policy |
 | The New Stack | https://thenewstack.io/feed/ (RSS) | DevOps, Kubernetes, cloud-native, microservices |
-| GitHub Blog | https://github.blog/ | Platform updates, open source releases, security advisories |
+| GitHub Blog | https://github.blog/feed/ (RSS) | Platform updates, open source releases, security advisories |
 
 ### Pass 3 — Secondary Sources (Fetch When Needed for Breadth)
 
 | Source | URL | Best For |
 |--------|-----|----------|
-| Krebs on Security | https://krebsonsecurity.com/ | Cybersecurity and cybercrime |
-| InfoQ | https://www.infoq.com/ | Software architecture, AI tooling, enterprise dev |
-| Wired | https://www.wired.com/ | Security policy, in-depth features |
-| TechCrunch | https://techcrunch.com/ | Startups, funding, industry moves |
-| MIT Technology Review | https://www.technologyreview.com/ | AI/ML research, emerging tech (often paywalled — use headlines only) |
+| Krebs on Security | https://krebsonsecurity.com/feed/ (RSS) | Cybersecurity and cybercrime |
+| InfoQ | https://feed.infoq.com/ (RSS) | Software architecture, AI tooling, enterprise dev |
+| Stack Overflow Blog | https://stackoverflow.blog/feed/ (RSS) | Developer community insights, AI/ML tools, engineering practices |
+| TechCrunch | https://techcrunch.com/feed/ (RSS) | Startups, funding, industry moves |
+| MIT Technology Review | https://www.technologyreview.com/feed/ (RSS) | AI/ML research, emerging tech (often paywalled — use headlines only) |
 
 ## Step-by-Step Workflow
 
@@ -61,12 +61,12 @@ From these results, collect headlines and links generating the most attention �
 
 ### Step 2: Broaden with Primary Outlets
 
-Fetch **primary outlets in parallel** to catch important developer stories aggregators may have missed. Use RSS where available for clean structured data:
+Fetch **primary outlets in parallel** to catch important developer stories aggregators may have missed. All primary outlets now have RSS/Atom feeds for clean structured data:
 
 - Ars Technica Technology Lab RSS: `https://feeds.arstechnica.com/arstechnica/technology-lab`
-- The Register: `https://www.theregister.com/`
+- The Register Atom: `https://www.theregister.com/headlines.atom`
 - The New Stack RSS: `https://thenewstack.io/feed/`
-- GitHub Blog: `https://github.blog/`
+- GitHub Blog RSS: `https://github.blog/feed/`
 
 ### Step 3: Fetch Article Detail for Top Candidates
 
