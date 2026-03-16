@@ -1,11 +1,11 @@
 ---
 name: daily-tech-brief
-description: 'Fetches and summarizes the top 10 tech news stories of the day, curated for software developers. Use when asked for a "daily tech brief", "tech news", "what happened in tech today", "top tech stories", "morning tech roundup", or any request for current technology headlines, developer news, or software industry updates. Covers AI/ML, security, open source, cloud, DevOps, programming languages, and developer tools. Sources aggregators first (Hacker News, Techmeme, lobste.rs, Google News) then primary outlets (Ars Technica, The Register, The New Stack, GitHub Blog) for deep developer coverage. Outputs an HTML page opened in the browser.'
+description: 'Fetches and summarizes the top 10 tech news stories of the day, curated for software developers. Use when asked for a "daily tech brief", "tech news", "what happened in tech today", "top tech stories", "morning tech roundup", or any request for current technology headlines, developer news, or software industry updates. Covers AI/ML, security, open source, cloud, DevOps, programming languages, and developer tools. Sources aggregators first (Hacker News, Techmeme, lobste.rs) then primary outlets (Ars Technica, The Register, The New Stack, GitHub Blog) for deep developer coverage. Outputs formatted text directly in the conversation.'
 ---
 
 # Daily Tech Brief
 
-Fetches the top 10 technology news stories of the day from across the web, curated specifically for software developers, and presents them as a clean, readable HTML page opened directly in the user's browser.
+Fetches the top 10 technology news stories of the day from across the web, curated specifically for software developers, and outputs them as formatted text directly in the conversation.
 
 ## When to Use This Skill
 
@@ -13,28 +13,26 @@ Fetches the top 10 technology news stories of the day from across the web, curat
 - User asks "what happened in tech today?" or "what's the top tech news?"
 - User wants a developer-focused news digest
 - User asks for top stories from Hacker News, Techmeme, Ars Technica, The Register, etc.
-- User wants tech news as an HTML page or in the browser
 
 ## Sources to Fetch From
 
-Fetch in three passes. **Aggregators first**, then primary outlets, then secondary sources as needed for breadth. This ensures you surface what's actually trending today rather than defaulting to the same homepages every run.
+Fetch in passes — **aggregators first**, then primary outlets. This surfaces what's actually trending today rather than defaulting to the same homepages every run.
 
 ### Pass 1 — Aggregators (Always Fetch First)
 
 | Source | URL | Best For |
 |--------|-----|----------|
 | Hacker News | https://news.ycombinator.com/ | Community-ranked developer picks; open source, tools, security |
-| Techmeme | https://www.techmeme.com/ | Algorithm + human editors; most-linked tech stories of the day |
+| Techmeme | https://www.techmeme.com/ | Algorithm + human editors; most-linked tech stories of the day. **Skip the "Sponsor Posts" section.** |
 | lobste.rs | https://lobste.rs/ | Developer-curated; programming languages, tools, open source |
-| Google News – Technology | https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlBQVAB | Broad real-time index across hundreds of outlets |
 
 ### Pass 2 — Primary Outlets (Deep Developer Coverage)
 
 | Source | URL | Best For |
 |--------|-----|----------|
-| Ars Technica | https://feeds.arstechnica.com/arstechnica/index (RSS) | Deep technical coverage, science, security, policy |
-| The Register | https://www.theregister.com/ | Enterprise tech, security, infrastructure |
-| The New Stack | https://thenewstack.io/ | DevOps, Kubernetes, cloud-native, microservices |
+| Ars Technica | https://feeds.arstechnica.com/arstechnica/technology-lab (RSS) | Deep technical coverage — AI, security, software, science |
+| The Register | https://www.theregister.com/ | Enterprise tech, security, infrastructure, UK/EU policy |
+| The New Stack | https://thenewstack.io/feed/ (RSS) | DevOps, Kubernetes, cloud-native, microservices |
 | GitHub Blog | https://github.blog/ | Platform updates, open source releases, security advisories |
 
 ### Pass 3 — Secondary Sources (Fetch When Needed for Breadth)
@@ -45,30 +43,29 @@ Fetch in three passes. **Aggregators first**, then primary outlets, then seconda
 | InfoQ | https://www.infoq.com/ | Software architecture, AI tooling, enterprise dev |
 | Wired | https://www.wired.com/ | Security policy, in-depth features |
 | TechCrunch | https://techcrunch.com/ | Startups, funding, industry moves |
-| MIT Technology Review | https://www.technologyreview.com/ | AI/ML research, emerging tech |
+| MIT Technology Review | https://www.technologyreview.com/ | AI/ML research, emerging tech (often paywalled — use headlines only) |
 
 ## Step-by-Step Workflow
 
 ### Step 1: Fetch Aggregators First
 
-Use the `web_fetch` tool to load **all four aggregators simultaneously** in a single response. These surface what's actually trending *today* without you having to guess which outlets published strong stories:
+Use the `web_fetch` tool to load **all three aggregators simultaneously**. These surface what's actually trending *today* without guessing which outlets are hot:
 
 | Aggregator | URL |
 |------------|-----|
 | Hacker News | https://news.ycombinator.com/ |
 | Techmeme | https://www.techmeme.com/ |
 | lobste.rs | https://lobste.rs/ |
-| Google News – Technology | https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlBQVAB |
 
-From these results, collect the headlines and links that are generating the most attention. This becomes your initial candidate pool.
+From these results, collect headlines and links generating the most attention — this is your initial candidate pool. On Techmeme, skip the "Sponsor Posts" section at the top.
 
 ### Step 2: Broaden with Primary Outlets
 
-Fetch **primary outlets in parallel** to catch important developer stories that aggregators may have missed. Use RSS where available (e.g., Ars Technica) for clean structured data:
+Fetch **primary outlets in parallel** to catch important developer stories aggregators may have missed. Use RSS where available for clean structured data:
 
-- Ars Technica RSS: `https://feeds.arstechnica.com/arstechnica/index`
+- Ars Technica Technology Lab RSS: `https://feeds.arstechnica.com/arstechnica/technology-lab`
 - The Register: `https://www.theregister.com/`
-- The New Stack: `https://thenewstack.io/`
+- The New Stack RSS: `https://thenewstack.io/feed/`
 - GitHub Blog: `https://github.blog/`
 
 ### Step 3: Fetch Article Detail for Top Candidates
@@ -100,19 +97,36 @@ For each story write **2 short paragraphs** (~3–5 sentences each):
 - **Paragraph 1**: What happened and why it matters
 - **Paragraph 2**: Context, implications, or developer-relevant detail
 
-### Step 6: Generate and Open HTML
+### Step 6: Output as Formatted Text
 
-Create the HTML file at `/tmp/daily-tech-brief-YYYY-MM-DD.html` using the template in `references/html-template.md`. Then open it with:
+Write the brief directly in your response using this structure:
 
-```bash
-open /tmp/daily-tech-brief-YYYY-MM-DD.html
 ```
+## Daily Tech Brief — {DATE}
+*Curated for software developers*
+
+---
+
+**1. {HEADLINE}**
+*{SOURCE_NAME}* — {ARTICLE_URL}
+
+{PARAGRAPH_1}
+
+{PARAGRAPH_2}
+
+---
+
+**2. {HEADLINE}**
+...
+```
+
+Continue for all 10 stories. End with a one-line footer listing the sources consulted.
 
 ## Output Requirements
 
-- Barebones, readable HTML — minimal CSS, no heavy frameworks
-- Each story must include: headline, source name, direct article link, 2-paragraph summary
-- Stories numbered 1–10
+- Plain text using markdown formatting — no HTML, no files, no browser
+- Each story must include: headline (bold), source name (italic), direct article link, 2-paragraph summary
+- Stories numbered 1–10, separated by `---`
 - Header shows today's date
 - Footer lists all sources consulted
 
@@ -127,5 +141,4 @@ open /tmp/daily-tech-brief-YYYY-MM-DD.html
 
 ## References
 
-- HTML output template: `references/html-template.md`
 - Source priority guide: `references/sources.md`

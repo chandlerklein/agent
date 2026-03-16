@@ -4,16 +4,15 @@ Reference for which sources to fetch and how to prioritize their content.
 
 ## Aggregators (Fetch First)
 
-Start with aggregators that surface what's actually trending *today*. These are the most important sources — they tell you what the developer community and broader tech industry are talking about right now, without you having to guess which outlets published something interesting.
+Start with aggregators that surface what's actually trending *today*. These are the most important sources — they tell you what the developer community is talking about right now without guessing which outlets published something interesting.
 
 | Aggregator | URL | Notes |
 |------------|-----|-------|
 | Hacker News | https://news.ycombinator.com/ | Community-ranked; best signal for what developers care about right now |
-| Techmeme | https://www.techmeme.com/ | Algorithm + human editors; shows the most-linked tech stories of the day |
+| Techmeme | https://www.techmeme.com/ | Algorithm + human editors; shows the most-linked tech stories of the day. **Skip the "Sponsor Posts" section.** |
 | lobste.rs | https://lobste.rs/ | Developer-curated community; heavier focus on programming, tools, and open source than HN |
-| Google News – Technology | https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlBQVAB | Broad real-time index across hundreds of outlets |
 
-Pull these **before** hitting individual outlets. They will point you to specific articles that are actually hot today, which changes daily.
+Pull these **before** hitting individual outlets. They will point you to specific articles that are actually hot today.
 
 ### Follow the Links
 
@@ -23,24 +22,22 @@ From aggregator results, follow links to the actual source articles. This means 
 
 Before including a story, check its publication date. Only include stories published within the **last 48 hours**. If an article has no visible date, skip it.
 
-For RSS feeds (e.g., Ars Technica), use the `<pubDate>` field to filter. Discard items older than 48 hours.
+For RSS feeds, use the `<pubDate>` field to filter. Discard items older than 48 hours.
 
 ---
 
 ## Primary Sources (Deep Developer Coverage)
 
-Fetch these **after aggregators** to broaden coverage and catch important developer stories the aggregators may have missed. These outlets publish high-quality technical content daily:
+Fetch these **after aggregators** to catch important developer stories the aggregators may have missed. Use RSS where available — these sites are often JavaScript-heavy and RSS gives cleaner, more complete content:
 
 | Source | URL | Format | Notes |
 |--------|-----|--------|-------|
-| Ars Technica | https://feeds.arstechnica.com/arstechnica/index | RSS/XML | Use RSS for clean structured data. Deep technical coverage: AI, security, science, policy. |
+| Ars Technica | https://feeds.arstechnica.com/arstechnica/technology-lab | RSS/XML | Technology Lab feed — AI, security, software, science. Avoids Cars/Gaming categories from the general feed. |
 | The Register | https://www.theregister.com/ | HTML | Enterprise tech, security, infrastructure, UK/EU policy. |
-| The New Stack | https://thenewstack.io/ | HTML | DevOps, Kubernetes, cloud-native, microservices — excellent for infrastructure developers. |
-| GitHub Blog | https://github.blog/ | HTML | Platform updates, open source releases, security advisories directly from GitHub. |
+| The New Stack | https://thenewstack.io/feed/ | RSS/XML | DevOps, Kubernetes, cloud-native, microservices. Use RSS — homepage is JS-heavy. |
+| GitHub Blog | https://github.blog/ | HTML | Platform updates, open source releases, security advisories. Low-volume but highly targeted. |
 
 ## Secondary Sources (Fetch When Primary Sources Are Thin)
-
-Fetch these to broaden coverage, especially if primary sources are sparse on a given day:
 
 | Source | URL | Format | Notes |
 |--------|-----|--------|-------|
@@ -48,7 +45,7 @@ Fetch these to broaden coverage, especially if primary sources are sparse on a g
 | InfoQ | https://www.infoq.com/ | HTML | Software architecture, AI/ML tooling, enterprise development practices. |
 | Wired | https://www.wired.com/ | HTML | Security policy and in-depth features with a tech/society angle. |
 | TechCrunch | https://techcrunch.com/ | HTML | Startups, funding rounds, and industry moves. |
-| MIT Technology Review | https://www.technologyreview.com/ | HTML | AI/ML research, emerging tech, energy. |
+| MIT Technology Review | https://www.technologyreview.com/ | HTML | AI/ML research and emerging tech. Often paywalled — use headlines only if article body is blocked. |
 
 ---
 
