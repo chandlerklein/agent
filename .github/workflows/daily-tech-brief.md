@@ -12,19 +12,21 @@ engine: copilot
 network:
   allowed:
     - defaults
-    - "news.ycombinator.com"
-    - "www.techmeme.com"
-    - "lobste.rs"
-    - "feeds.arstechnica.com"
-    - "www.theregister.com"
-    - "thenewstack.io"
-    - "github.blog"
-    - "krebsonsecurity.com"
+    - "developer.chrome.com"
     - "feed.infoq.com"
-    - "www.infoq.com"
+    - "feeds.arstechnica.com"
+    - "github.blog"
+    - "go.dev"
+    - "krebsonsecurity.com"
+    - "lobste.rs"
+    - "news.ycombinator.com"
     - "stackoverflow.blog"
     - "techcrunch.com"
+    - "thenewstack.io"
+    - "www.infoq.com"
+    - "www.techmeme.com"
     - "www.technologyreview.com"
+    - "www.theregister.com"
 
 safe-outputs:
   create-issue:
