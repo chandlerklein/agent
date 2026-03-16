@@ -23,27 +23,27 @@ Fetch in passes — **aggregators first**, then primary outlets. This surfaces w
 | Source | URL | Best For |
 |--------|-----|----------|
 | Hacker News | https://news.ycombinator.com/ | Community-ranked developer picks; open source, tools, security. **Fetch as HTML** — RSS omits vote counts needed for trending filter. |
-| Techmeme | https://www.techmeme.com/feed.xml (RSS) | Algorithm + human editors; most-linked tech stories of the day. **Skip the "Sponsor Posts" section.** |
-| lobste.rs | https://lobste.rs/rss (RSS) | Developer-curated; programming languages, tools, open source |
+| Techmeme | https://www.techmeme.com/feed.xml | Algorithm + human editors; most-linked tech stories of the day. **Filter out any item that appears to be a paid placement** (sponsor entries appear inline in the RSS feed). |
+| lobste.rs | https://lobste.rs/rss | Developer-curated; programming languages, tools, open source |
 
 ### Pass 2 — Primary Outlets (Deep Developer Coverage)
 
 | Source | URL | Best For |
 |--------|-----|----------|
-| Ars Technica | https://feeds.arstechnica.com/arstechnica/technology-lab (RSS) | Deep technical coverage — AI, security, software, science |
-| The Register | https://www.theregister.com/headlines.atom (Atom) | Enterprise tech, security, infrastructure, UK/EU policy |
-| The New Stack | https://thenewstack.io/feed/ (RSS) | DevOps, Kubernetes, cloud-native, microservices |
-| GitHub Blog | https://github.blog/feed/ (RSS) | Platform updates, open source releases, security advisories |
+| Ars Technica | https://feeds.arstechnica.com/arstechnica/technology-lab | Deep technical coverage — AI, security, software, science |
+| The Register | https://www.theregister.com/headlines.atom | Enterprise tech, security, infrastructure, UK/EU policy |
+| The New Stack | https://thenewstack.io/feed/ | DevOps, Kubernetes, cloud-native, microservices |
+| GitHub Blog | https://github.blog/feed/ | Platform updates, open source releases, security advisories |
 
 ### Pass 3 — Secondary Sources (Fetch When Needed for Breadth)
 
 | Source | URL | Best For |
 |--------|-----|----------|
-| Krebs on Security | https://krebsonsecurity.com/feed/ (RSS) | Cybersecurity and cybercrime |
-| InfoQ | https://feed.infoq.com/ (RSS) | Software architecture, AI tooling, enterprise dev |
-| Stack Overflow Blog | https://stackoverflow.blog/feed/ (RSS) | Developer community insights, AI/ML tools, engineering practices |
-| TechCrunch | https://techcrunch.com/feed/ (RSS) | Startups, funding, industry moves |
-| MIT Technology Review | https://www.technologyreview.com/feed/ (RSS) | AI/ML research, emerging tech (often paywalled — use headlines only) |
+| Krebs on Security | https://krebsonsecurity.com/feed/ | Cybersecurity and cybercrime |
+| InfoQ | https://feed.infoq.com/ | Software architecture, AI tooling, enterprise dev |
+| Stack Overflow Blog | https://stackoverflow.blog/feed/ | Developer community insights, AI/ML tools, engineering practices |
+| TechCrunch | https://techcrunch.com/feed/ | Startups, funding, industry moves |
+| MIT Technology Review | https://www.technologyreview.com/feed/ | AI/ML research, emerging tech (often paywalled — use headlines only) |
 
 ## Step-by-Step Workflow
 
@@ -54,10 +54,10 @@ Use the `web_fetch` tool to load **all three aggregators simultaneously**. These
 | Aggregator | URL |
 |------------|-----|
 | Hacker News | https://news.ycombinator.com/ |
-| Techmeme | https://www.techmeme.com/ |
-| lobste.rs | https://lobste.rs/ |
+| Techmeme | https://www.techmeme.com/feed.xml |
+| lobste.rs | https://lobste.rs/rss |
 
-From these results, collect headlines and links generating the most attention — this is your initial candidate pool. On Techmeme, skip the "Sponsor Posts" section at the top.
+From these results, collect headlines and links generating the most attention — this is your initial candidate pool. For Techmeme, filter out any items that appear to be paid placements (sponsor entries appear as regular items in the RSS feed — skip anything that reads as an advertisement rather than editorial coverage).
 
 ### Step 2: Broaden with Primary Outlets
 

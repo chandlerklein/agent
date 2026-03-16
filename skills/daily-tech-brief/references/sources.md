@@ -9,7 +9,7 @@ Start with aggregators that surface what's actually trending *today*. These are 
 | Aggregator | URL | Format | Notes |
 |------------|-----|--------|-------|
 | Hacker News | https://news.ycombinator.com/ | HTML | Community-ranked; best signal for what developers care about right now. **Keep as HTML** — the RSS feed omits vote counts needed for the "100+ points" trending filter. |
-| Techmeme | https://www.techmeme.com/feed.xml | RSS/XML | Algorithm + human editors; shows the most-linked tech stories of the day. **Skip the "Sponsor Posts" section.** |
+| Techmeme | https://www.techmeme.com/feed.xml | RSS/XML | Algorithm + human editors; shows the most-linked tech stories of the day. **Sponsor entries appear as regular items in the RSS feed** — skip any item that reads as an advertisement rather than editorial coverage. |
 | lobste.rs | https://lobste.rs/rss | RSS/XML | Developer-curated community; heavier focus on programming, tools, and open source than HN. RSS includes categories for easy filtering. |
 
 Pull these **before** hitting individual outlets. They will point you to specific articles that are actually hot today.
@@ -22,7 +22,7 @@ From aggregator results, follow links to the actual source articles. This means 
 
 Before including a story, check its publication date. Only include stories published within the **last 48 hours**. If an article has no visible date, skip it.
 
-For RSS feeds, use the `<pubDate>` field to filter. Discard items older than 48 hours.
+For RSS feeds, use the `<pubDate>` field to filter. For Atom feeds (e.g., The Register's `.atom` feed), use `<updated>` or `<published>` instead — Atom does not use `<pubDate>`. Discard items older than 48 hours regardless of format.
 
 ---
 
@@ -63,7 +63,7 @@ When deciding which 10 stories to include, score each candidate:
 - **−2** — Primarily a consumer product story with no developer angle
 - **−3** — Deals, discounts, or non-news content
 
-Pick the 10 highest-scoring stories. Break ties by favoring the story from the higher-priority source.
+Pick the 10 highest-scoring stories. Break ties by favoring the story from the higher-priority source. Scores are additive per story — a single story can accumulate points across multiple criteria.
 
 ---
 
