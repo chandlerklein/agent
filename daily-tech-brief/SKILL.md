@@ -26,13 +26,13 @@ Start with aggregators, then fill gaps with primary sources. Full priority guide
 | Lobste.rs | https://lobste.rs/ | Developer-focused: languages, open source, security |
 | The New Stack | https://thenewstack.io/ | Cloud-native, Kubernetes, DevOps |
 | GitHub Blog | https://github.blog/ | GitHub, Actions, Copilot, open-source news |
+| InfoQ | https://www.infoq.com/ | Architecture, distributed systems, language releases |
 | Ars Technica | https://feeds.arstechnica.com/arstechnica/index (RSS) | Deep technical coverage, science, policy |
-| The Verge | https://www.theverge.com/tech | Consumer tech, industry news, product launches |
 | Wired | https://www.wired.com/ | Security, culture, policy, in-depth features |
-| MIT Technology Review | https://www.technologyreview.com/ | Research, emerging tech, energy, AI |
-| TechCrunch | https://techcrunch.com/ | Startups, funding, industry moves |
 | The Register | https://www.theregister.com/ | Enterprise tech, security, UK/EU policy |
 | Krebs on Security | https://krebsonsecurity.com/ | Security and cybercrime |
+| Stack Overflow Blog | https://stackoverflow.blog/ | Developer surveys, ecosystem trends |
+| MIT Technology Review | https://www.technologyreview.com/ | Research, emerging tech, energy, AI |
 
 ## Step-by-Step Workflow
 

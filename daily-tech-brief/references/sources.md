@@ -37,12 +37,10 @@ These sources publish tech news every day and are worth checking directly if the
 
 | Source | URL | Format | Notes |
 |--------|-----|--------|-------|
-| Hacker News | https://news.ycombinator.com/ | HTML | Sort by points. Stories with 100+ points are strong candidates. |
 | Ars Technica | https://feeds.arstechnica.com/arstechnica/index | RSS/XML | Use RSS for clean structured data. Filter to `AI`, `Tech`, `Security`, `Science` categories. |
 | The New Stack | https://thenewstack.io/ | HTML | Excellent cloud-native, Kubernetes, DevOps, and platform engineering coverage. RSS: `https://thenewstack.io/feed/` |
 | GitHub Blog | https://github.blog/ | HTML | Direct source for GitHub features, Actions, Copilot, and open-source ecosystem news. RSS: `https://github.blog/feed/` |
-| The Verge | https://www.theverge.com/tech | HTML | Tech section landing page. |
-| TechCrunch | https://techcrunch.com/ | HTML | Startups, funding rounds, industry moves. RSS: `https://techcrunch.com/feed/` |
+| InfoQ | https://www.infoq.com/ | HTML | Premier source for software developers: architecture, distributed systems, language releases, conference coverage. RSS: `https://feed.infoq.com/` |
 
 ## Secondary Sources (Fetch When Possible)
 
@@ -51,12 +49,14 @@ Fetch these to broaden coverage, especially if primary sources are thin:
 | Source | URL | Format | Notes |
 |--------|-----|--------|-------|
 | Wired | https://www.wired.com/ | HTML | Best for security, policy, and in-depth features. |
-| MIT Technology Review | https://www.technologyreview.com/ | HTML | Research, AI, energy, and emerging tech. |
 | The Register | https://www.theregister.com/ | HTML | Enterprise, security, UK/EU policy. RSS: `https://www.theregister.com/headlines.atom` |
 | Krebs on Security | https://krebsonsecurity.com/ | HTML | Cybersecurity and cybercrime. |
+| Stack Overflow Blog | https://stackoverflow.blog/ | HTML | Developer surveys, ecosystem trends, engineering insights. RSS: `https://stackoverflow.blog/feed/` |
+| TechCrunch | https://techcrunch.com/ | HTML | Startups, funding rounds, industry moves. Lower developer signal — useful for acquisition/layoff coverage. RSS: `https://techcrunch.com/feed/` |
+| The Verge | https://www.theverge.com/tech | HTML | Consumer tech and industry news. Lower developer signal — use only when covering a significant platform or developer tool story. |
+| MIT Technology Review | https://www.technologyreview.com/ | HTML | Research, AI, energy, and emerging tech. Note: frequently paywalled; use what's available from the index page. |
 | Engadget | https://www.engadget.com/ | HTML | Consumer tech and AI products. RSS: `https://www.engadget.com/rss.xml`. Note: editorial output has reduced in recent years; use if other sources are thin. |
 | 9to5Mac | https://9to5mac.com/ | HTML | Apple platform and developer news. Best for Apple-specific developer stories (Swift, Xcode, etc.). |
-| MacRumors | https://www.macrumors.com/ | HTML | Apple platform news. Lower priority unless covering an Apple developer story. |
 
 ---
 
